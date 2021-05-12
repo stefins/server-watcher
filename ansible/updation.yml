@@ -1,0 +1,8 @@
+---
+  - name: update-ubuntu
+    hosts: linux
+    tasks: 
+      - name: Run the script
+        script: server-watcher/run.sh
+        register: output
+      - debug: var=output.stdout_lines
